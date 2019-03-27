@@ -87,6 +87,11 @@ The above implementations are to be considered for 6/10 points and the below add
         12. Run kubectl get services to find the external IP of the load balancer 
         13. Visit the external IP using a browser, each consecutive request will be served by a different machine in the cluster which               can be verified by the HOST-IP field in API responses.
         
+# Adding a new Task inside the Dash board
     
+        Each Task can have any number of sub-tasks but each parameter (eg:assignee,difficulty,priority) should be correspondingly assigned to each subtask.
+        ***The different values for each sub-task are seperated by a '|' symbol. The idea was to keep the UI as simple as possible. The user can implement a much more user friendly UI if intended.***
+
+*All the errors in the appliation are handling in such a way that no stack trace will be displayed in the browser under any circumstances*
     
     
