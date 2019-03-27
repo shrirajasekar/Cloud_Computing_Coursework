@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniproj-app
+spec:
+  selector:
+    matchLabels:
+      app: miniproj-app
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: miniproj-app
+        tier: frontend
+    spec:
+      containers:
+      - name: miniproj-app
+        image: "gcr.io/poetic-flight-140804/miniproj-app:v2"

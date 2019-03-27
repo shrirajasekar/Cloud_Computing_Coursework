@@ -1,0 +1,58 @@
+CREATE KEYSPACE todo
+  WITH REPLICATION = { 
+   'class' : 'SimpleStrategy', 
+   'replication_factor' : 2
+  };
+
+
+
+CREATE TABLE todo.tasks ( 
+   id UUID PRIMARY KEY, 
+   name text,
+   description text,
+   priority text,
+   difficulty text,
+   start text,
+   end text,
+   assignee text
+    );
+
+
+
+
+CREATE TABLE todo.sub_tasks ( 
+   id UUID PRIMARY KEY, 
+   task_id text,
+   name text,
+   description text,
+   difficulty text,
+   ref text,
+   assignee text
+    );
+    
+    
+CREATE TABLE todo.users ( 
+   id int PRIMARY KEY, 
+   name text,
+   role text
+    );
+
+CREATE TABLE todo.login ( 
+   id UUID PRIMARY KEY, 
+   uname text,
+   pwd text,
+   role text
+    );
+    
+  
+
+INSERT INTO todo.users (id,name,role) VALUES(1,'Adam','admin');
+INSERT INTO todo.users (id,name,role) VALUES(2,'Bob','manager');
+INSERT INTO todo.users (id,name,role) VALUES(3,'Calvin','servant');
+INSERT INTO todo.users (id,name,role) VALUES(4,'David','servant');
+INSERT INTO todo.users (id,name,role) VALUES(5,'Edith','servant');
+INSERT INTO todo.users (id,name,role) VALUES(0,'All','all');
+    
+    
+
+

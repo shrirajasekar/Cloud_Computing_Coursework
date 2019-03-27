@@ -1,0 +1,90 @@
+<html>
+<h1>
+    All in one dashboard
+</h1>
+<p>Click <a href="/logout">here</a> to logout.</p>
+{% for message in get_flashed_messages() %}
+  {{ message }}
+{% endfor %}
+<br>
+<h2>Search top tweets in Twitter</h2>
+<form action="/search_twitter" method="post">
+  <input type="text" placeholder="Keyword" name="keyword" value="{{
+    request.form.keyword }}">
+  <input class="btn btn-default" type="submit" value="Search Twitter">
+</form>
+
+
+<br>
+<h2>Add a task to your To-Do</h2>
+<form action="/add_todo" method="post">
+  <input type="text" placeholder="Task" name="task_name" value="{{request.form.task_name}}"> --
+  <input type="text" placeholder="Description" name="task_description" value="{{request.form.task_description}}"> --
+  <input type="text" placeholder="Priority" name="task_priority" value="{{request.form.task_priority}}"> --
+  <input type="text" placeholder="Start" name="task_start" value="{{request.form.task_start}}"> --
+  <input type="text" placeholder="End" name="task_end" value="{{request.form.task_end}}"> --
+  <input type="text" placeholder="Difficulty" name="task_difficulty" value="{{request.form.task_difficulty}}">  --
+  <input type="text" placeholder="Assignee" name="task_assignee" value="{{request.form.task_assignee}}">  <br>||<br> ||________
+  <input type="text" placeholder="Subtasks Names" name="subtasks_names" value="{{request.form.subtasks_names}}"> &emsp;&emsp;&emsp;&emsp; Seperate corresponding subtask details by a '|' symbol <br>||<br> ||________ 
+  <input type="text" placeholder="Subtasks Descriptions" name="subtasks_descriptions" value="{{request.form.subtasks_descriptions}}"><br>||<br> ||________
+  <input type="text" placeholder="Subtasks Difficulties" name="subtasks_difficulties" value="{{request.form.subtasks_difficulties}}"> <br> ||<br> ||________
+  <input type="text" placeholder="Subtasks References" name="subtasks_refs" value="{{request.form.subtasks_refs}}"> <br> ||<br> ||________
+  <input type="text" placeholder="Subtasks Assignees" name="subtasks_assignees" value="{{request.form.subtasks_assignees}}"> <br> 
+
+
+  <br>
+  
+  <input class="btn btn-default" type="submit" value="Add new task">
+</form>
+
+<table>
+  <tr>
+    <td></td>
+    <td>
+    <form action="/get_all_tasks">
+    <input class="btn btn-default" type="submit" value="Show all tasks">
+    </form>
+    </td>
+    <td>
+        <form action="/delete_all_tasks" method="post">
+          <input class="btn btn-default" type="submit" value="Clear all tasks">
+        </form>
+    </td>
+</tr>
+
+</table>
+
+
+
+
+
+<h2>Manage users and employees</h2>
+
+
+
+<table>
+  <tr>
+    <td>
+        <form action="/get_all_workers">
+          <input class="btn btn-default" type="submit" value="View all employees">
+        </form>
+    </td>
+    <td>
+        <form action="/get_all_users">
+          <input class="btn btn-default" type="submit" value="View all app users">
+        </form>
+
+    </td>
+  </tr>
+
+</table>
+<form action="/add_worker" method="post">
+  <input type="text" placeholder="Employee name" name="name" value="{{request.form.name}}">
+  <input type="text" placeholder="Role" name="role" value="{{request.form.role}}">
+<input class="btn btn-default" type="submit" value="Add employee">
+</form>
+
+
+
+
+</html>

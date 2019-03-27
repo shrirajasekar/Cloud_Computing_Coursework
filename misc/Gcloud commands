@@ -1,0 +1,25 @@
+export PROJECT_ID="$(gcloud config get-value project -q)"
+
+gcloud container clusters create cassandra --num-nodes=3 --machine-type "n1-standard-2" --zone  europe-west2-a
+
+kubectl create -f cassandra-peer-service.yml
+kubectl create -f cassandra-service.yml
+kubectl create -f cassandra-replication-controller.yml
+
+
+kubectl exec -it cassandra-xtjs9 cqlsh
+
+
+kubectl scale rc cassandra --replicas=3
+
+
+kubectl exec -it cassandra-24bgm -- nodetool status
+
+
+docker build -t gcr.io/${PROJECT_ID}/miniproj-app:v1 .
+
+docker push gcr.io/${PROJECT_ID}/miniproj-app:v1
+
+kubectl run miniproj-app --image=gcr.io/${PROJECT_ID}/miniproj-app:v1 --port 8080
+
+kubectl expose deployment miniproj-app --type=LoadBalancer --port 80 --target-port 8080

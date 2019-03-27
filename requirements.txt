@@ -1,0 +1,10 @@
+Flask==0.10.1
+pyOpenSSL==19.0.0
+pandas
+Flask-Cassandra==0.14
+Flask-Hashing==1.1
+Flask-Tweepy==0.1
+cassandra-driver==3.17.0
+requests==2.21.0
+Django==2.1.7
+twython==3.7.0
