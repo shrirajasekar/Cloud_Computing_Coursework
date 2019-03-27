@@ -1,5 +1,5 @@
 # Cloud_Computing_Coursework
-RESTful application using python and flask for Cloud computing coursework.
+RESTful application framework using python and flask for Cloud computing coursework.
 
 # Introduction to App - 'All in one Dashboard'
 This is a 'Task management' application that allows users to view,delete,assign tasks and sub-tasks. 
@@ -90,7 +90,7 @@ The above implementations are to be considered for 6/10 points and the below add
 # Adding a new Task inside the Dash board
     
         Each Task can have any number of sub-tasks but each parameter (eg:assignee,difficulty,priority) should be correspondingly assigned to each subtask.
-        ***The different values for each sub-task are seperated by a '|' symbol. The idea was to keep the UI as simple as possible. The user can implement a much more user friendly UI if intended.***
+        ***The different values for each sub-task are seperated by a '|' symbol. The idea was to keep the UI as simple as possible and focus on the API implementation. The user can implement an user friendly UI on top of the application framework if intended.***
 
 *All the errors in the appliation are handling in such a way that no stack trace will be displayed in the browser under any circumstances*
     
