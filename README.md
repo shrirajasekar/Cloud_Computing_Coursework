@@ -97,17 +97,29 @@ The above implementations are to be considered for 6/10 points and the below add
 # List of REST APIs Implemented (with HATEOAS)
 
 /rest/get_all_tasks
+
 /rest/get_task_details_by_id<id>
+    
 /rest/delete_task_by_id<id>
+    
 /rest/get_all_sub_tasks
+
 /rest/get_sub_task_details_by_id<id>
+    
 /rest/get_sub_tasks_by_task_id<id>
+    
 /rest/delete_sub_task_by_id<id>
+    
 /rest/get_all_workers
+
 /rest/get_all_users
+
 /rest/get_worker_by_id<id>
+    
 /rest/get_user_by_id<id>
+    
 /rest/delete_worker_by_id<id>
+    
 /rest/delete_user_by_id<id>
 
 
